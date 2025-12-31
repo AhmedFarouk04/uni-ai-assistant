@@ -1,0 +1,21 @@
+{
+  "domain": "administration",
+  "description": "Administrative services and requests",
+  "intents": [
+    {
+      "intent": "online_requests",
+      "question_variants": ["الطلبات الإدارية فين", "أقدم طلب ازاي"],
+      "answer": "كل الطلبات الإدارية بتتم من صفحة Requests Online"
+    },
+    {
+      "intent": "card_replacement",
+      "question_variants": ["أطلع كارنيه بدل فاقد"],
+      "answer": "قدّم طلب بدل فاقد من صفحة Requests"
+    },
+    {
+      "intent": "certificates",
+      "question_variants": ["أطلع بيان درجات", "أطلب شهادة تخرج"],
+      "answer": "تقديم الطلب من صفحة Requests Online"
+    }
+  ]
+}

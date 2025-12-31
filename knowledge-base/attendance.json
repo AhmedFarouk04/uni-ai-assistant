@@ -1,0 +1,26 @@
+{
+  "domain": "attendance",
+  "description": "Lecture attendance and QR scanning",
+  "intents": [
+    {
+      "intent": "record_attendance",
+      "question_variants": ["أسجل حضور المحاضرة ازاي", "اعمل Scan QR ازاي"],
+      "steps": [
+        "الدكتور يعرض QR في بداية المحاضرة",
+        "افتح التطبيق",
+        "اختار Scan QR",
+        "الحضور يتسجل تلقائي"
+      ],
+      "screens": ["Scan QR", "Attendance"]
+    },
+    {
+      "intent": "attendance_not_recorded",
+      "question_variants": ["الحضور متسجلش", "نسيت اعمل Scan"],
+      "solution": ["قدّم Appeal من صفحة Attendance خلال 24 ساعة"]
+    },
+    {
+      "intent": "attendance_affects_registration",
+      "answer": "نعم، بعض المواد بتحتاج نسبة حضور للتسجيل في الترم القادم"
+    }
+  ]
+}

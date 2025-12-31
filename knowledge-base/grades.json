@@ -1,0 +1,21 @@
+{
+  "domain": "grades",
+  "description": "Exam results and grade requests",
+  "intents": [
+    {
+      "intent": "exam_results_time",
+      "question_variants": ["النتيجة بتظهر امتى", "درجات الامتحان امتى"],
+      "answer": "النتائج بتظهر عادة خلال 1–2 أسبوع في صفحة Grades"
+    },
+    {
+      "intent": "re_evaluation_request",
+      "question_variants": ["أعمل تظلم ازاي", "اعترض على الدرجة"],
+      "steps": ["ادخل Grades", "اختار Request Re-evaluation"]
+    },
+    {
+      "intent": "failed_course",
+      "question_variants": ["سقطت في مادة", "رسبت أعمل ايه"],
+      "answer": "يمكن إعادة تسجيل المادة في ترم لاحق أو الترم الصيفي"
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "domain": "registration",
+  "description": "Course registration, editing, prerequisites and issues",
+  "intents": [
+    {
+      "intent": "course_registration_how",
+      "question_variants": [
+        "أسجل المواد ازاي",
+        "ازاي أعمل تسجيل مواد",
+        "فين تسجيل المواد",
+        "مش لاقي تسجيل المواد"
+      ],
+      "answer": {
+        "steps": [
+          "افتح التطبيق",
+          "ادخل على Course Registration",
+          "اختار المواد اللي محتاجها",
+          "اضغط Register"
+        ]
+      },
+      "screens": ["Course Registration"]
+    },
+    {
+      "intent": "registration_failed",
+      "question_variants": [
+        "ليه مش راضي يسجل المواد",
+        "مش قادر أسجل كل المواد",
+        "التسجيل مش شغال"
+      ],
+      "possible_causes": [
+        "تعديت الحد الأقصى للساعات",
+        "المادة ليها prerequisite",
+        "في تعارض جدول",
+        "المادة Full",
+        "الدفع غير مكتمل"
+      ]
+    },
+    {
+      "intent": "edit_registered_courses",
+      "question_variants": [
+        "أغير المواد بعد التسجيل ازاي",
+        "عدلت رأيي بعد Register"
+      ],
+      "answer": {
+        "steps": [
+          "ادخل Course Registration",
+          "عدّل المواد المسجلة",
+          "اضغط Update"
+        ],
+        "note": "التعديل مسموح قبل غلق التسجيل فقط"
+      }
+    },
+    {
+      "intent": "prerequisite_definition",
+      "question_variants": ["يعني ايه prerequisite", "ليه مش راضي يسجل المادة"],
+      "answer": "Prerequisite هي مادة لازم تكون ناجح فيها قبل تسجيل مادة أخرى"
+    }
+  ]
+}

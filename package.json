@@ -1,0 +1,8 @@
+{
+  "name": "uni-ai-assistant",
+  "type": "module",
+  "dependencies": {
+    "openai": "^4.0.0",
+    "dotenv": "^16.4.0"
+  }
+}

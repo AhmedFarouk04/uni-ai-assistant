@@ -1,0 +1,39 @@
+{
+  "domain": "gpa",
+  "description": "GPA calculation, limits, warnings and honors",
+  "definitions": {
+    "gpa": "المعدل التراكمي من 0 إلى 4 وبيعكس المستوى الأكاديمي العام"
+  },
+  "grade_scale": {
+    "A": { "min": 3.5, "max": 4 },
+    "B": { "min": 3, "max": 3.49 },
+    "C": { "min": 2.5, "max": 2.99 },
+    "D": { "min": 2, "max": 2.49 },
+    "F": { "max": 1.99 }
+  },
+  "intents": [
+    {
+      "intent": "calculate_gpa",
+      "question_variants": ["GPA بيتحسب ازاي", "احسب المعدل التراكمي ازاي"],
+      "steps": [
+        "اضرب درجة كل مادة في عدد ساعاتها",
+        "اجمع نقاط كل المواد",
+        "اقسم على مجموع الساعات"
+      ]
+    },
+    {
+      "intent": "low_gpa_effects",
+      "question_variants": ["ايه اللي يحصل لو GPA قليل", "GPA أقل من 2"],
+      "effects": [
+        "تقليل عدد الساعات",
+        "Academic Probation",
+        "لازم رفع المعدل في الترم التالي"
+      ]
+    },
+    {
+      "intent": "high_gpa_benefits",
+      "question_variants": ["ايه مميزات GPA عالي", "GPA أكبر من 3"],
+      "benefits": ["تسجيل عدد ساعات أكبر", "إمكانية التخرج المبكر"]
+    }
+  ]
+}

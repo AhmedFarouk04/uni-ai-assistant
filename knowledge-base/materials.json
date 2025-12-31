@@ -1,0 +1,17 @@
+{
+  "domain": "materials",
+  "description": "Course materials and resources",
+  "intents": [
+    {
+      "intent": "get_materials",
+      "question_variants": ["أجيب الماتريال منين", "فين المحاضرات"],
+      "path": "Dashboard → My Courses → Course → Materials",
+      "content_types": ["PDF Lectures", "Sheets", "Assignments", "Videos"]
+    },
+    {
+      "intent": "missing_material",
+      "question_variants": ["المحاضرة مش موجودة", "ماتريال ناقصة"],
+      "solution": ["تواصل مع الدكتور", "قدّم Missing Material Request"]
+    }
+  ]
+}
