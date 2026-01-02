@@ -5,6 +5,7 @@
     {
       "intent": "record_attendance",
       "question_variants": ["أسجل حضور المحاضرة ازاي", "اعمل Scan QR ازاي"],
+      "answer": "يتم تسجيل الحضور عن طريق مسح QR Code الذي يعرضه المحاضر في بداية المحاضرة من خلال التطبيق.",
       "steps": [
         "الدكتور يعرض QR في بداية المحاضرة",
         "افتح التطبيق",
@@ -16,6 +17,7 @@
     {
       "intent": "attendance_not_recorded",
       "question_variants": ["الحضور متسجلش", "نسيت اعمل Scan"],
+      "answer": "في حالة عدم تسجيل الحضور، يمكن تقديم Appeal من صفحة Attendance خلال 24 ساعة.",
       "solution": ["قدّم Appeal من صفحة Attendance خلال 24 ساعة"]
     },
     {
@@ -24,14 +26,14 @@
       "answer": "نعم، بعض المواد قد تتطلب نسبة حضور للتسجيل في الترم القادم، لكن النظام لا يحدد نسبة حضور رقمية معينة."
     },
     {
-      "intent": "undefined_attendance_case",
-      "description": "Any attendance-related case not explicitly defined",
-      "answer": "النظام لا يحدد إجراءً واضحًا لهذه الحالة."
-    },
-    {
       "intent": "missed_lecture_general",
       "question_variants": ["لو فوت محاضرة", "حضوري راح عليا", "فاتتني محاضرة"],
       "answer": "النظام لا يوفر تعويضًا مباشرًا للمحاضرات التي تم تفويتها، ولكن يمكن تقديم Appeal خلال 24 ساعة إذا لم يتم تسجيل الحضور."
+    },
+    {
+      "intent": "undefined_attendance_case",
+      "description": "Any attendance-related case not explicitly defined",
+      "answer": "النظام لا يحدد إجراءً واضحًا لهذه الحالة."
     }
   ]
 }
