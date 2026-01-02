@@ -7,20 +7,24 @@ const client = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
 });
 
-// ===== Fallback normalization (Presentation Layer only) =====
 const AR_FALLBACK = "النظام لا يحدد إجراءً واضحًا لهذه الحالة";
 const EN_FALLBACK =
   "The system does not define a clear procedure for this case.";
 
 function normalizeFallback(answer, userQuestion) {
   const isEnglish = /^[\x00-\x7F]*$/.test(userQuestion);
+  const normalized = answer.replace(/\s+/g, " ").trim();
 
-  if (isEnglish && answer.trim() === AR_FALLBACK) {
-    return EN_FALLBACK;
+  if (
+    isEnglish &&
+    normalized.includes("النظام لا يحدد إجراءً واضحًا لهذه الحالة")
+  ) {
+    return "The system does not define a clear procedure for this case.";
   }
 
   return answer;
 }
+
 // ============================================================
 
 export default async function chatHandler(req, res) {
