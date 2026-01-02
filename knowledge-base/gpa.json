@@ -34,6 +34,12 @@
       "intent": "high_gpa_benefits",
       "question_variants": ["ايه مميزات GPA عالي", "GPA أكبر من 3"],
       "benefits": ["تسجيل عدد ساعات أكبر", "إمكانية التخرج المبكر"]
+    },
+
+    {
+      "intent": "undefined_registration_action",
+      "description": "Any registration-related action not defined in the system",
+      "answer": "النظام لا يحدد أي إجراء بخصوص هذا الموضوع."
     }
   ]
 }
