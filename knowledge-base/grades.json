@@ -5,17 +5,22 @@
     {
       "intent": "exam_results_time",
       "question_variants": ["النتيجة بتظهر امتى", "درجات الامتحان امتى"],
-      "answer": "النتائج بتظهر عادة خلال 1–2 أسبوع في صفحة Grades"
+      "answer": "تظهر النتائج في صفحة Grades بعد الانتهاء من التصحيح، وفق سياسات الكلية. النظام لا يحدد مدة زمنية ثابتة لظهور النتائج."
     },
     {
       "intent": "re_evaluation_request",
       "question_variants": ["أعمل تظلم ازاي", "اعترض على الدرجة"],
-      "steps": ["ادخل Grades", "اختار Request Re-evaluation"]
+      "steps": ["ادخل على صفحة Grades", "اختار Request Re-evaluation"]
     },
     {
       "intent": "failed_course",
       "question_variants": ["سقطت في مادة", "رسبت أعمل ايه"],
-      "answer": "يمكن إعادة تسجيل المادة في ترم لاحق أو الترم الصيفي"
+      "answer": "يمكن إعادة تسجيل المادة في ترم لاحق وفق لوائح الكلية. النظام لا يحدد تفاصيل إضافية."
+    },
+    {
+      "intent": "undefined_grades_case",
+      "description": "Any grades-related question not explicitly defined",
+      "answer": "النظام لا يحدد إجراءً واضحًا لهذه الحالة."
     }
   ]
 }

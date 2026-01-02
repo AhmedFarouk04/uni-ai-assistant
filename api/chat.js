@@ -15,27 +15,26 @@ export default async function chatHandler(req, res) {
   try {
     const { message } = req.body;
 
-    if (!message) {
+    if (!message || typeof message !== "string") {
       return res.status(400).json({ error: "Message is required" });
     }
 
-    const knowledgeBase = loadKnowledge();
-    const systemRules = knowledgeBase.find((k) => k.platform);
+    const { knowledge, systemRules } = loadKnowledge();
 
-    const prompt = buildPrompt(message, knowledgeBase, systemRules);
+    const prompt = buildPrompt(message, knowledge, systemRules);
 
     const completion = await client.chat.completions.create({
       model: "gpt-4o-mini",
+      temperature: 0.1, // ⬅️ أقل = أمان أعلى
+      max_tokens: 120,
       messages: [
         { role: "system", content: process.env.SYSTEM_PROMPT },
         { role: "user", content: prompt },
       ],
-      temperature: 0.2,
-      max_tokens: 100,
     });
 
     res.json({
-      answer: completion.choices[0].message.content,
+      answer: completion.choices[0].message.content.trim(),
     });
   } catch (err) {
     console.error(err);

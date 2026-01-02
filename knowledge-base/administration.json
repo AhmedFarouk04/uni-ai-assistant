@@ -5,17 +5,22 @@
     {
       "intent": "online_requests",
       "question_variants": ["الطلبات الإدارية فين", "أقدم طلب ازاي"],
-      "answer": "كل الطلبات الإدارية بتتم من صفحة Requests Online"
+      "answer": "كل الطلبات الإدارية بتتم من صفحة Requests Online."
     },
     {
       "intent": "card_replacement",
       "question_variants": ["أطلع كارنيه بدل فاقد"],
-      "answer": "قدّم طلب بدل فاقد من صفحة Requests"
+      "answer": "يمكنك تقديم طلب كارنيه بدل فاقد من صفحة Requests Online."
     },
     {
       "intent": "certificates",
       "question_variants": ["أطلع بيان درجات", "أطلب شهادة تخرج"],
-      "answer": "تقديم الطلب من صفحة Requests Online"
+      "answer": "تقديم طلب بيان درجات أو شهادة تخرج يتم من صفحة Requests Online."
+    },
+    {
+      "intent": "undefined_administrative_request",
+      "description": "Any administrative request not explicitly defined",
+      "answer": "النظام لا يحدد إجراءً واضحًا لهذا الطلب الإداري."
     }
   ]
 }

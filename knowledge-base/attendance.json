@@ -20,7 +20,13 @@
     },
     {
       "intent": "attendance_affects_registration",
-      "answer": "نعم، بعض المواد بتحتاج نسبة حضور للتسجيل في الترم القادم"
+      "description": "Attendance impact without defined numeric threshold",
+      "answer": "نعم، بعض المواد قد تتطلب نسبة حضور للتسجيل في الترم القادم، لكن النظام لا يحدد نسبة حضور رقمية معينة."
+    },
+    {
+      "intent": "undefined_attendance_case",
+      "description": "Any attendance-related case not explicitly defined",
+      "answer": "النظام لا يحدد إجراءً واضحًا لهذه الحالة."
     }
   ]
 }

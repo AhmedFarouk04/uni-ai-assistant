@@ -28,12 +28,13 @@
         "التسجيل مش شغال"
       ],
       "possible_causes": [
-        "تعديت الحد الأقصى للساعات",
+        "تعديت الحد الأقصى للساعات المسموح بها",
         "المادة ليها prerequisite",
-        "في تعارض جدول",
+        "في تعارض في الجدول",
         "المادة Full",
         "الدفع غير مكتمل"
-      ]
+      ],
+      "note": "إذا لم تنطبق أي من هذه الأسباب، النظام لا يحدد سبب المشكلة."
     },
     {
       "intent": "course_full",
@@ -58,13 +59,18 @@
           "عدّل المواد المسجلة",
           "اضغط Update"
         ],
-        "note": "التعديل مسموح قبل غلق التسجيل فقط"
+        "note": "التعديل مسموح قبل غلق التسجيل فقط."
       }
     },
     {
       "intent": "prerequisite_definition",
       "question_variants": ["يعني ايه prerequisite", "ليه مش راضي يسجل المادة"],
-      "answer": "Prerequisite هي مادة لازم تكون ناجح فيها قبل تسجيل مادة أخرى"
+      "answer": "Prerequisite هي مادة لازم تكون ناجح فيها قبل تسجيل مادة أخرى."
+    },
+    {
+      "intent": "undefined_registration_case",
+      "description": "Any registration-related case not explicitly defined",
+      "answer": "النظام لا يحدد إجراءً واضحًا لهذه الحالة."
     }
   ]
 }

@@ -1,26 +1,35 @@
 {
   "platform": "University Management System",
   "language": "ar",
+  "rules_scope": "Only explicitly stated rules are valid.",
+  "academic_status_policy": {
+    "status_only": true,
+    "additional_actions_defined": false
+  },
   "credit_hours_limits": [
     {
       "condition": "GPA >= 3",
       "max_hours": 21,
-      "status": "Honors"
+      "status": "Honors",
+      "description": "حالة تفوق أكاديمي"
     },
     {
       "condition": "2 <= GPA < 3",
       "max_hours": 18,
-      "status": "Normal"
+      "status": "Normal",
+      "description": "حالة أكاديمية طبيعية"
     },
     {
       "condition": "1 <= GPA < 2",
       "max_hours": 15,
-      "status": "Academic Probation"
+      "status": "Academic Probation",
+      "description": "الطالب تحت الملاحظة الأكاديمية"
     },
     {
       "condition": "GPA < 1",
       "max_hours": 12,
-      "status": "Academic Warning"
+      "status": "Academic Warning",
+      "description": "تحذير أكاديمي"
     }
   ],
   "attendance_policy": {

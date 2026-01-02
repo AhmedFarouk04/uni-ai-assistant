@@ -1,9 +1,10 @@
 {
   "domain": "gpa",
-  "description": "GPA calculation, limits, warnings and honors",
+  "description": "GPA definition and calculation only",
   "definitions": {
-    "gpa": "المعدل التراكمي من 0 إلى 4 وبيعكس المستوى الأكاديمي العام"
+    "gpa": "المعدل التراكمي من 0 إلى 4 ويعكس المستوى الأكاديمي العام"
   },
+  "grade_scale_note": "Grade scale is provided for interpretation only and does not define academic status or system actions.",
   "grade_scale": {
     "A": { "min": 3.5, "max": 4 },
     "B": { "min": 3, "max": 3.49 },
@@ -14,45 +15,24 @@
   "intents": [
     {
       "intent": "calculate_gpa",
-      "question_variants": ["GPA بيتحسب ازاي", "احسب المعدل التراكمي ازاي"],
+      "question_variants": [
+        "GPA بيتحسب ازاي",
+        "احسب المعدل التراكمي ازاي",
+        "المعدل بيتحسب ازاي"
+      ],
       "steps": [
         "اضرب درجة كل مادة في عدد ساعاتها",
         "اجمع نقاط كل المواد",
         "اقسم على مجموع الساعات"
       ]
     },
-
-    {
-      "intent": "gpa_below_2_effects",
-      "question_variants": ["GPA أقل من 2"],
-      "conditions": {
-        "gpa_max": 1.99
-      },
-      "effects": [
-        "تقليل عدد الساعات",
-        "Academic Probation",
-        "لازم رفع المعدل في الترم التالي"
-      ]
-    },
-
     {
       "intent": "general_low_gpa_question",
       "question_variants": ["GPA قليل", "معدلي ضعيف"],
-      "answer": "لتحديد التأثير على التسجيل أو الحالة الأكاديمية، يجب معرفة قيمة المعدل التراكمي بالأرقام. النظام يعتمد على حدود رقمية واضحة."
+      "answer": "لتحديد أي تأثير أكاديمي، يجب معرفة قيمة المعدل التراكمي بالأرقام. النظام يعتمد على حدود رقمية واضحة."
     },
-
-    {
-      "intent": "high_gpa_benefits",
-      "question_variants": ["ايه مميزات GPA عالي", "GPA أكبر من 3"],
-      "conditions": {
-        "gpa_min": 3
-      },
-      "benefits": ["تسجيل عدد ساعات أكبر", "إمكانية التخرج المبكر"]
-    },
-
     {
       "intent": "undefined_gpa_action",
-      "description": "Any GPA-related question without defined numeric rule",
       "answer": "النظام لا يحدد أي إجراء بخصوص هذا الموضوع."
     }
   ]

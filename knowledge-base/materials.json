@@ -11,7 +11,13 @@
     {
       "intent": "missing_material",
       "question_variants": ["المحاضرة مش موجودة", "ماتريال ناقصة"],
-      "solution": ["تواصل مع الدكتور", "قدّم Missing Material Request"]
+      "solution": ["قدّم Missing Material Request"],
+      "note": "النظام لا يحدد أي إجراء آخر بخصوص هذه الحالة."
+    },
+    {
+      "intent": "undefined_materials_case",
+      "description": "Any materials-related question not explicitly defined",
+      "answer": "النظام لا يحدد إجراءً واضحًا لهذه الحالة."
     }
   ]
 }
