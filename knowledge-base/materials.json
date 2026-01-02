@@ -5,12 +5,14 @@
     {
       "intent": "get_materials",
       "question_variants": ["أجيب الماتريال منين", "فين المحاضرات"],
+      "answer": "يمكنك الوصول إلى المواد الدراسية من خلال Dashboard ثم My Courses ثم اختيار المادة والدخول إلى Materials.",
       "path": "Dashboard → My Courses → Course → Materials",
       "content_types": ["PDF Lectures", "Sheets", "Assignments", "Videos"]
     },
     {
       "intent": "missing_material",
       "question_variants": ["المحاضرة مش موجودة", "ماتريال ناقصة"],
+      "answer": "في حالة وجود مادة دراسية ناقصة، يمكن تقديم طلب Missing Material Request.",
       "solution": ["قدّم Missing Material Request"],
       "note": "النظام لا يحدد أي إجراء آخر بخصوص هذه الحالة."
     },

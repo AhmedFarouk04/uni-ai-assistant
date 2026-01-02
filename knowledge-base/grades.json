@@ -10,6 +10,7 @@
     {
       "intent": "re_evaluation_request",
       "question_variants": ["أعمل تظلم ازاي", "اعترض على الدرجة"],
+      "answer": "يمكن تقديم طلب تظلم على الدرجة من خلال صفحة Grades واختيار Request Re-evaluation.",
       "steps": ["ادخل على صفحة Grades", "اختار Request Re-evaluation"]
     },
     {
