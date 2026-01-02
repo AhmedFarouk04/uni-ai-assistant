@@ -27,6 +27,11 @@
       "intent": "undefined_attendance_case",
       "description": "Any attendance-related case not explicitly defined",
       "answer": "النظام لا يحدد إجراءً واضحًا لهذه الحالة."
+    },
+    {
+      "intent": "missed_lecture_general",
+      "question_variants": ["لو فوت محاضرة", "حضوري راح عليا", "فاتتني محاضرة"],
+      "answer": "النظام لا يوفر تعويضًا مباشرًا للمحاضرات التي تم تفويتها، ولكن يمكن تقديم Appeal خلال 24 ساعة إذا لم يتم تسجيل الحضور."
     }
   ]
 }
