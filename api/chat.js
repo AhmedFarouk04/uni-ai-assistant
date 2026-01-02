@@ -7,6 +7,22 @@ const client = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
 });
 
+// ===== Fallback normalization (Presentation Layer only) =====
+const AR_FALLBACK = "النظام لا يحدد إجراءً واضحًا لهذه الحالة";
+const EN_FALLBACK =
+  "The system does not define a clear procedure for this case.";
+
+function normalizeFallback(answer, userQuestion) {
+  const isEnglish = /^[\x00-\x7F]*$/.test(userQuestion);
+
+  if (isEnglish && answer.trim() === AR_FALLBACK) {
+    return EN_FALLBACK;
+  }
+
+  return answer;
+}
+// ============================================================
+
 export default async function chatHandler(req, res) {
   if (req.method !== "POST") {
     return res.status(405).json({ error: "Method not allowed" });
@@ -25,7 +41,7 @@ export default async function chatHandler(req, res) {
 
     const completion = await client.chat.completions.create({
       model: "gpt-4o-mini",
-      temperature: 0.1, // ⬅️ أقل = أمان أعلى
+      temperature: 0.1,
       max_tokens: 120,
       messages: [
         { role: "system", content: process.env.SYSTEM_PROMPT },
@@ -33,8 +49,11 @@ export default async function chatHandler(req, res) {
       ],
     });
 
+    const rawAnswer = completion.choices[0].message.content.trim();
+    const finalAnswer = normalizeFallback(rawAnswer, message);
+
     res.json({
-      answer: completion.choices[0].message.content.trim(),
+      answer: finalAnswer,
     });
   } catch (err) {
     console.error(err);
