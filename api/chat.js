@@ -25,12 +25,12 @@ export default async function chatHandler(req, res) {
     const lang = detectLanguage(message);
     const intent = await detectIntent(client, message);
 
-    // ========== DEFINITION ==========
+    //  DEFINITION
     if (intent === "DEFINITION") {
       const completion = await client.chat.completions.create({
         model: "gpt-4o-mini",
         temperature: 0.2,
-        max_tokens: 80,
+        max_tokens: 300,
         messages: [
           {
             role: "system",
@@ -50,12 +50,12 @@ Keep the answer short and educational.
       });
     }
 
-    // ========== GENERAL ==========
+    //  GENERAL
     if (intent === "GENERAL") {
       const completion = await client.chat.completions.create({
         model: "gpt-4o-mini",
         temperature: 0.3,
-        max_tokens: 60,
+        max_tokens: 200,
         messages: [
           {
             role: "system",
@@ -75,7 +75,7 @@ Answer in ${lang === "en" ? "English" : "Arabic"} only.
       });
     }
 
-    // ========== SYSTEM ==========
+    //  SYSTEM
     const normalizedMessage = normalizeQuestion(message);
     const { knowledge, systemRules } = loadKnowledge();
 
@@ -84,7 +84,7 @@ Answer in ${lang === "en" ? "English" : "Arabic"} only.
     const completion = await client.chat.completions.create({
       model: "gpt-4o-mini",
       temperature: 0.2,
-      max_tokens: 120,
+      max_tokens: 300,
       messages: [
         { role: "system", content: process.env.SYSTEM_PROMPT },
         { role: "user", content: prompt },
