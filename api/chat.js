@@ -31,7 +31,7 @@ export default async function chatHandler(req, res) {
 
     const completion = await client.chat.completions.create({
       model: "gpt-4o-mini",
-      temperature: 0.1,
+      temperature: 0.2,
       max_tokens: 120,
       messages: [
         { role: "system", content: process.env.SYSTEM_PROMPT },
